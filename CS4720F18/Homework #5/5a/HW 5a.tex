@@ -1,0 +1,74 @@
+\documentclass[11pt]{article}  
+\usepackage[margin=.5in]{geometry}
+\parindent=0in
+\parskip=8pt
+\usepackage{fancyhdr,amssymb,amsmath, graphicx, listings,float,subfig,enumerate,epstopdf,color,multirow,setspace,bm,textcomp}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+%\usepackage{calc}
+%\usepackage{tikz}
+%\usepackage{mathtools}
+%\usetikzlibrary{matrix}
+%\usepackage{multirow}
+%\usepackage{graphicx}
+%\graphicspath{ {./} }
+
+
+\pagestyle{fancy}
+
+
+\begin{document} 
+
+\lhead{Assignment \# 5a}
+\chead{Daniel Frey}
+\rhead{\today}
+
+\begin{center}
+\begin{Large}
+	CS 4720/5720 Design and Analysis of Algorithms \\
+	Homework \#5a \\
+	Daniel Frey
+\end{Large}
+\end{center}
+
+\section*{Answers to homework problems:}
+
+\begin{enumerate}
+%1
+	\item
+		\textbf{\textit{Comparing Minimum Spanning Tree Algorithms}}
+
+		\begin{enumerate}[(a)]
+%1a
+			\item
+				\textit{Prim's Algorithm $ \Theta(|V|^2) $: weight matrix, priority queue as un-ordered array} \\
+					\hspace*{.5cm}
+					Loop through the vertices not yet included in the minimum spanning tree on each iteration. Furthermore, it will again loop through each vertex connected to the current minimum and see if there is a better edge to choose, also on each iteration. \textbf{This gives a time complexity of $ \sum_{i=0}^{V-1} \sum_{j=0}^{V-1} = (V)(V) = V^2 \in \Theta(V^2). $} \\
+
+%1b
+			\item
+				\textit{Prim's Algorithm $ \Theta(|E| \log{|V|}) $: adj. list, priority queue as min-heap} \\
+					\hspace*{.5cm}
+					Loop through each vertex, extracting it from the heap. Since each deletion is $ \Theta(\log V) $, this gives $ \Theta(V \log V). $ Then you must loop through adjacency lists, updating the heap if the new edge is a lower value. This gives $ \Theta(2E \log V) $, where $ \log V $ is the heap operation $ \Rightarrow \Theta(E \log V) \therefore $ \textbf{Time complexity is $ \Theta(E \log V + V \log V) = \Theta(E \log V). $} \\
+				
+%1c
+			\item 
+				\textit{Sparse Graph $ |E| \in \Theta(|V|) $} \\
+				\textbf{$ \Theta(E \log E) $: Kruskal with adjacency list and fast sort \textit{OR} $ \Theta(E \log V) $: Prim with adjacency list and min-heap} since E grows the same as V, these would end up being the same. \\
+
+%1d
+			\item
+				\textit{Moderate Edge Graph $ |E| \in \Theta(|V| \log{|V|}) $} \\
+				\textbf{$ \Theta(E \log V) $: Prim with adjacency list and min-heap} because E will eventually grow faster than V. \\
+
+%1e
+			\item
+				\textit{Dense Graph $ |E| \in \Theta(|V|^2) $} \\
+				\textbf{$ \Theta(V^2) $: Prim with adjacency matrix and un-ordered} since the ratio of edges to vertices is high, and edges are not accounted for in this time complexity. \\
+				
+		\end{enumerate}
+
+
+\end{enumerate}
+
+\end{document}

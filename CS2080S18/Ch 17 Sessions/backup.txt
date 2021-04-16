@@ -1,0 +1,61 @@
+#!/bin/csh
+#AUTHOR:	Daniel Frey
+#CLASS:		CS2080.001
+#TITLE:		Backup
+#DATE DUE:	4/9/18
+#DESCRIPTION:	This script takes in a file and a directory only. It will check that both arguments exist and can be accessed with the correct permissions. The file will contain the files to be backed-up. The directory will be where the files are backed-up to. It will then go through each file listed in the file list, check that the file can be read, and then copy it to the given directory with the same name and .bak.
+#
+#EXIT VALUES
+#	0	if successfully completed
+#	10	incorrect number of arguments
+#	20	file does not exist/cannot read
+#	30	directory does not exist/cannot write 
+
+
+#VALIDATIONS
+
+#set the number of arguments into variable
+set numargs = $#argv
+
+#if the number of arguments is not exactly 2, then exit
+if ( $numargs != 2 ) then
+	echo Incorrect number of arguments.
+	exit 10
+endif
+
+#set file name into variable
+set backupList = $argv[1]
+
+#set directory name into variable
+set directory = $argv[2]
+
+#check that the backup file exists/readable
+if ( ! ( -r $backupList ) ) then
+	echo The file $backupList does not exist or cannot be read.
+	exit 20
+endif
+
+#check if directory exists/writable
+if ( ! ( -dw $directory ) ) then
+	echo The directory $directory does not exist or cannot be written to.
+	exit 30
+endif
+
+
+#BODY
+
+#for each file to be backed-up in the file given
+foreach file ( `cat $backupList` )
+	#check if the file to be backed-up exists/readable
+	if ( ! ( -r $file ) ) then
+		echo The file $file does not exist or cannot be read.
+	else
+		#copy the file to be backed-up to the directory with same name .bak
+		cp $file $directory/$file.bak
+
+		#confirm to screen that the file has been backed-up
+		echo The file $file has been copied to $directory/$file.bak.
+end
+
+exit 0
+

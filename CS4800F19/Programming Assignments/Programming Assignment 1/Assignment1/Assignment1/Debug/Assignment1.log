@@ -1,0 +1,13 @@
+﻿  table.cpp
+c:\users\daniel frey\documents\school\uccs\fall 2019\cs 4800\homework\homework 1\assignment1\assignment1\table.cpp(7): warning C4273: 'floor': inconsistent dll linkage
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\corecrt_math.h(504): note: see previous definition of 'floor'
+c:\users\daniel frey\documents\school\uccs\fall 2019\cs 4800\homework\homework 1\assignment1\assignment1\table.cpp(17): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\daniel frey\documents\school\uccs\fall 2019\cs 4800\homework\homework 1\assignment1\assignment1\table.cpp(18): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\daniel frey\documents\school\uccs\fall 2019\cs 4800\homework\homework 1\assignment1\assignment1\table.cpp(19): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\daniel frey\documents\school\uccs\fall 2019\cs 4800\homework\homework 1\assignment1\assignment1\table.cpp(20): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\daniel frey\documents\school\uccs\fall 2019\cs 4800\homework\homework 1\assignment1\assignment1\table.cpp(25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\daniel frey\documents\school\uccs\fall 2019\cs 4800\homework\homework 1\assignment1\assignment1\table.cpp(26): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\daniel frey\documents\school\uccs\fall 2019\cs 4800\homework\homework 1\assignment1\assignment1\table.cpp(27): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\daniel frey\documents\school\uccs\fall 2019\cs 4800\homework\homework 1\assignment1\assignment1\table.cpp(28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+  Assignment1.vcxproj -> C:\Users\Daniel Frey\Documents\School\UCCS\Fall 2019\CS 4800\Homework\Homework 1\Assignment1\Debug\Assignment1.exe
+  Assignment1.vcxproj -> C:\Users\Daniel Frey\Documents\School\UCCS\Fall 2019\CS 4800\Homework\Homework 1\Assignment1\Debug\Assignment1.pdb (Partial PDB)

@@ -1,0 +1,89 @@
+\documentclass[11pt]{article}  
+\usepackage[margin=.5in]{geometry}
+\parindent=0in
+\parskip=8pt
+\usepackage{fancyhdr,amssymb,amsmath, graphicx, listings,float,subfig,enumerate,epstopdf,color,multirow,setspace,bm,textcomp}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+%\usepackage{calc}
+%\usepackage{tikz}
+%\usepackage{mathtools}
+%\usetikzlibrary{matrix}
+%\usepackage{multirow}
+%\usepackage{graphicx}
+\graphicspath{ {./} }
+
+
+\pagestyle{fancy}
+
+
+\begin{document} 
+
+\lhead{Assignment \# 5b}
+\chead{Daniel Frey}
+\rhead{\today}
+
+\begin{center}
+\begin{Large}
+	CS 4720/5720 Design and Analysis of Algorithms \\
+	Homework \#5b \\
+	Daniel Frey
+\end{Large}
+\end{center}
+
+\section*{Answers to homework problems:}
+
+\begin{enumerate}
+%1
+	\item
+		\textbf{\textit{Lower bounding on the complexity of array search}} \\
+			\hspace*{.5cm}
+			Trivially, all elements must be checked. A number is only the maximum if every other element "lost" at least once (every other element is less than the maximum), which would require $ n-1 $ comparisons. \\
+			\hspace*{.5cm}
+			Consider the decision tree of an array size 3 A[0, 2], it makes $ n-1 $ comparisons to arrive at an maximum: \\
+			\includegraphics[width=\textwidth]{"Decision Tree"} \\
+
+%2
+	\item
+		\textbf{\textit{Tractability}} \\
+		\begin{enumerate}
+%2a
+		\item
+			\textbf{\textit{$ \Theta(n \log \log n) $} running time} \\
+				\hspace*{.5cm} 
+				\textbf{Tractable} since this is bounded by a polynomial. \\
+			
+%2b
+		\item			
+			\textbf{\textit{$ \Theta(5^n) $} running time} \\
+				\hspace*{.5cm} 
+				\textbf{Intractable} since this is exponential. \\
+				
+%2c
+		\item
+			\textbf{\textit{$ \Theta(n!) $} running time} \\
+				\hspace*{.5cm} 
+				\textbf{Intractable} since this is factorial. \\		
+
+		\end{enumerate}
+		
+%3
+	\item
+		\textbf{\textit{Greedy Knapsack}} \\
+			\hspace*{.5cm}
+			Consider a knapsack with capacity $ W = 10 $, and items with values $ v_i: \{6, 6,10\} $ and weights $ w_i: \{3, 7, 8\} $ \\
+			\hspace*{.5cm}
+			GREEDY: value $ = $ 10, weight $ = $ 8 \\
+			\hspace*{.5cm}
+			OPT: value $ = $ 12, weight $ = $ 10 \\
+			\hspace*{.5cm}
+			$ r = \frac{12}{10} = 1.2 $ \\ 
+			
+			\hspace*{.5cm}
+			Consider the values $ v_i: \{\varepsilon, \varepsilon, 10-\varepsilon\} $ \\
+			\hspace*{.5cm}
+			$ r = \frac{10-\varepsilon}{\varepsilon} = \frac{10}{\varepsilon} - 1 \Rightarrow \varepsilon \rightarrow 0 = \infty \therefore $ Greedy Knapsack has an arbitrarily poor performance ratio. \\
+
+\end{enumerate}
+
+\end{document}

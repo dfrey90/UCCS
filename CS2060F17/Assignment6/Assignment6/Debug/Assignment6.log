@@ -1,0 +1,5 @@
+﻿  Assignment6.c
+c:\users\daniel frey\documents\school\uccs\cs 2060\assignment6\assignment6\assignment6.c(327): warning C4018: '<': signed/unsigned mismatch
+c:\users\daniel frey\documents\school\uccs\cs 2060\assignment6\assignment6\assignment6.c(333): warning C4018: '<': signed/unsigned mismatch
+  Assignment6.vcxproj -> C:\Users\Daniel Frey\Documents\School\UCCS\CS 2060\Assignment6\Debug\Assignment6.exe
+  Assignment6.vcxproj -> C:\Users\Daniel Frey\Documents\School\UCCS\CS 2060\Assignment6\Debug\Assignment6.pdb (Partial PDB)

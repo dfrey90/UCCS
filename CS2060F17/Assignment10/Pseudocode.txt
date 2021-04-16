@@ -1,0 +1,76 @@
+Initialize constants for: number of lines per customer data file to 8,
+	array indices for product to1, name to 2, street address to 3, city to 4, state to 5, zip to 6, and order cost to 7,
+	file names for customer data, confirm template/letter, ship template/letter, review template/letter
+Main
+	Start read files function
+Function: Start read files
+	Initialize variables for index to 0, customer count to 0, array of strings for customer data, file pointer to customer data
+	Connect file pointer to file for reading
+	If the file can be opened
+		Initialize customer data array
+		While not EOF, get and store customer data from file into array
+			Replace newline character with a null character
+			If index mod 8 is 0
+				increment customer count
+			Increment index
+		Make letters function using customer data and customer count
+		Deallocate memory for customer data
+	Else
+		File cannot be opened
+Function: Initialize array, argument array of strings
+	For each array index allocate memroy for info
+Function: Free array, argument array of strings
+	For each array index deallocate memory
+Function: Make letters, argument array of strings, customer count
+	Create array of function pointers for each letter function
+	For each letter index
+		Call function to make letter
+Function: Confirm, Ship, Review letters, arugment array of strings, index
+	Create variables for confirm/ship/review template/letter file, array to hold file line, 2 pointers for tokenizing string
+	If the file can be opened
+		While not EOF, get and store file line
+			If file line has brackets
+				If the first character in line is bracket
+					Set pointers to tokenize string for brackets
+					Compare and concatenate strings function
+				Else
+					Divide line from first left bracket
+					Divide line from last right bracket
+					Compare and concatenate strings function
+				If line token is not null
+					Write line token to file
+				Else if the file line has a newline character
+					Write file line to file
+				Else (newline char only)
+					Write file line to file
+				Set both pointers used to tokenize strings back to null
+			Else
+				Cannot open file
+			Close file pointers
+Function: Compare and concatenate strings, argument compare string, concat string, array of strings
+	If replacing name brackets
+		If string is not empty
+			Append name to line
+		Else
+			Copy name over line
+	Else if replacing product brackets
+		If string is not empty
+			Append product to line
+		Else
+			Copy product over line
+	Else if replacing street address brackets
+		If string is not empty
+			Append street address to line
+		Else
+			Copy street address over line
+	Else if replacing city brackets
+		If string is not empty
+			Append city, state, and zip to line
+		Else
+			Copy city, state, and zip over line
+	Else replacing order cost brackets
+		If string is not empty
+			Append order cost to line
+		Else
+			Copy order cost over line
+	

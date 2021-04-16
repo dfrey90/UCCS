@@ -1,0 +1,49 @@
+Declare constants for section prices and fees/tax, group names, sections, rows, seats, and how long for purchase
+Declare variables for concert, seciton, number of seats, seciton number, row, seat, and total cost
+Set variables to function calls
+Display concert menu
+	Initialize variable for input to 0
+	Get input, repeat if invalid
+	Return selection
+Display sections
+	Initialize variable for input to -1
+	Get input, repeat if invalid
+	Return selection
+Get number of seats
+	Initialize variable for input to 0
+	Get input, repeat if invalid or out of bounds
+	Return number of seats
+Get section number based on section selection
+	Initialize variable for section number
+	Seed random
+	Randomly generate section number in bounds
+	Return section number
+Generate and return random row number in bounds
+Generate and return random seat number in bounds
+Calculate ticket cost
+	Initialize variables for cost, seat price, total, and seat bounds
+	Use section to determine seat price
+	Total is seat price times the number of seats
+	Cost is total plus number of seats times fees/taxes
+	Display ticket information
+		If alpha row and multiple seats, display character and seat range
+			Display smaller seat range first
+		If alpha row and single seat, dispaly character and no seat range
+		If number row and multiple seats, display seat range
+		If number row and single seat, display no seat range
+Purchase tickets
+	Initialize variable for purchase T/F, user input, start and end times
+	Start time is current time at beginning
+	Prompt for purchase yes no
+		Repeat if invalid input
+	Get end time after question
+	If purchasing and within time limit
+		Say total cost
+		Purchase is true
+	Else
+		Purchase is false
+	Return purchase
+If purchasing tickets
+	Initialize variables for loop
+	Beginning is lower end of seat range, end is high end of seat range
+	Loop through each ticket displaying ticket info

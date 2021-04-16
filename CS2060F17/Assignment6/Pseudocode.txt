@@ -1,0 +1,113 @@
+Declare constants for section prices and fees/tax, group names, sections, rows, seats, and how long for purchase
+Declare variables for concert, seciton, number of seats, seciton number, row, seat, and total cost
+
+Set variables concert, section, number seats, section number, row, seat, array for seat info, total cost for function calls
+Create a pointer for file operation
+
+If the file exists
+	Populate seat info
+		While not EOF
+			Loop through the file adding info into seating array
+	Display concert menu
+		Initialize variable for input to 0
+		Display 3 group options
+		Prompt for input, repeat if invalid
+		Return selection
+	Do
+		Do
+			Display sections
+				Initialize variable for input to -1
+				Display 4 different sections
+				Prompt for input, repeat if invalid
+				Return selection
+			Get number of seats
+				Initialize variable for input to 0
+				Ask for number of seats between 1 and 6
+				Get input, repeat if invalid or out of bounds
+				Return number of seats
+			Row and Seat
+				Initialize variables for found seats, start and stop in for loop, seat count
+				If number of seats is more than 1
+					Add one to count
+				Else
+					Count is 0
+				Loop through seat array
+					If more than 1 seat
+						If current seat and next seat vacant
+							Add one to count
+						Else 
+							Start over from 1
+						If all seats found
+							Add one to row then mod by max row
+							If row is 0
+								Row is 5
+							Else
+								Row is row
+							Seat is seat position - number of seats + 3
+							Seat range is seat position + 2
+							Found seats is true
+						Else 
+							Found seats is false
+					Else
+						If position is empty/0
+							One seat, mark row and seat
+							Found seats is true
+						Else
+							Found seats is false
+				Return seats found or not
+		While no seats are found
+		Calculate ticket cost
+			Initialize variables for cost, seat price, total, and seat bounds
+			Use section to determine seat price
+			Total is seat price times the number of seats
+			Cost is total plus number of seats times fees/taxes
+		Display ticket information: quantity, section, row, seat(s), seat price, total
+			If number of seats is one
+				If section floor
+					Print ticket info with flor for section
+				Else 
+					Print ticket info with number for section
+			Else must have multiple tickets
+				If section floor
+					Print ticket info with floor for section
+				Else
+					Print ticket info with number for section
+			Print service fee/tax using number of seats multiplied by fee/tax
+			Print total cost
+		Purchase tickets
+			Initialize variable for purchase T/F, user input, start and end times
+			Start time is current time at beginning
+			Prompt for purchase yes no
+				Repeat if invalid input
+			Get end time after prompt
+			If purchasing
+				If within time limit
+					Say total cost
+					Purchase is true
+				Else
+					Purchase expired
+					Purchase is false
+			Else said no
+				Purchase is false
+			Return purchase
+		If purchasing tickets
+			Initialize variables for loop using seat range
+			If the original seat is higher than range
+				Start is the range (lower number)
+				Stop is the original seat (higher number)
+			Else
+				Start is the orignal seat (higher number)
+				Stop is the range (lower number)
+			Loop through each ticket displaying ticket info
+				If section number is floor
+					Print floor for section number
+				Else
+					Print number for section number
+		Update seat array with purchased ticket info
+	While purchasing more tickets
+	Calculate total cost
+		Loop through seat array tallying seats
+		Multiply num seats for each section by seat price
+		Add all section prices
+	Close pointer for file
+Else file cannot be opened

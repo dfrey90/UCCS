@@ -1,0 +1,45 @@
+Script started on Tue 27 Feb 2018 05:23:59 PM MST
+[dfrey@blanca ch5]$ echo one-line file > file1
+[dfrey@blanca ch5]$ more file1
+one-line file
+[dfrey@blanca ch5]$ echo "two-line file
+> line 2" > file2
+[dfrey@blanca ch5]$ more file2
+two-line file
+line 2
+[dfrey@blanca ch5]$ facts="UNIX vs. Others"
+[dfrey@blanca ch5]$ echo "This is a fact $facts in our life."
+This is a fact UNIX vs. Others in our life.
+[dfrey@blanca ch5]$ echo "This is a fact '$facts' in our life"
+This is a fact 'UNIX vs. Others' in our life
+[dfrey@blanca ch5]$ echo "This is a fact \$facts in our life"
+This is a fact $facts in our life
+[dfrey@blanca ch5]$ echo "This is a fact \"$facts\" in our life"
+This is a fact "UNIX vs. Others" in our life
+[dfrey@blanca ch5]$ exit
+exit
+
+Script done on Tue 27 Feb 2018 05:30:37 PM MST
+Script started on Tue 27 Feb 2018 05:31:49 PM MST
+[dfrey@blanca ch5]$ first=PARENT
+[dfrey@blanca ch5]$ echo $first
+PARENT
+[dfrey@blanca ch5]$ echo $0
+bash
+[dfrey@blanca ch5]$ bash
+[dfrey@blanca ch5]$ echo $first
+
+[dfrey@blanca ch5]$ #variable only local to shell
+[dfrey@blanca ch5]$ second=SUBSHELL
+[dfrey@blanca ch5]$ echo $second
+SUBSHELL
+[dfrey@blanca ch5]$ exit
+exit
+[dfrey@blanca ch5]$ echo $first
+PARENT
+[dfrey@blanca ch5]$ echo $second
+
+[dfrey@blanca ch5]$ exit
+exit
+
+Script done on Tue 27 Feb 2018 05:34:10 PM MST

@@ -1,0 +1,17 @@
+Hello [name]
+
+Thank you for ordering [product] 
+
+Shipped To:
+--------------------------------
+[name]
+[streetaddress]
+[city] [state] [zip]
+
+Order Cost: 
+--------------------------------
+[ordercost]
+
+You will receive another email when your order ships.
+
+Visit us again.  EducationalBooks.com

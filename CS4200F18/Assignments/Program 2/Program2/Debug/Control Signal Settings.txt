@@ -1,0 +1,12 @@
+Address		Machine Code	Instruction		Rd	Rs	Rt	Op	Func	Jump	RegWrite	ALU Src	Mem Rd	Mem Wr	WB Sel	Rd/Rt Sel	beq	ALU	
+0x00400000	0x3c011001	Lui $at, 0x1001     	2	0	1	0x0f	 	0	1		1	0	0	1	1		0	0
+0x00400004	0x34300000	Ori $s0, $at, 0x0000	0	1	16	0x0d	 	0	1		1	0	0	1	1		0	0
+0x00400008	0x8e080000	Lw $t0, 0($s0)      	0	16	8	0x23	 	0	1		1	1	0	0	1		0	1
+0x0040000c	0x20090003	Addi $t1, $zero, 3  	0	0	9	0x08	 	0	1		1	0	0	1	1		0	0
+0x00400010	0x11200004	Beq $t1, $zero, 0x0004	0	9	0	0x04	 	0	0		0	0	0	0	1		1	1
+0x00400014	0x10940200	Add $t0, $t0, $t1   	8	8	9	0x00	0x20	0	1		0	0	0	1	0		0	0
+0x00400018	0x2129ffff	Addi $t1, $t1, -1   	31	9	9	0x08	 	0	1		1	0	0	1	1		0	0
+0x0040001c	0xae080000	Sw $t0, 0($s0)      	0	16	8	0x2b	 	0	0		1	0	1	0	0		0	1
+0x00400020	0x81000040	J 0x00400010        	0	0	16	0x02	 	1	0		0	0	0	0	0		0	0
+0x00400024	0x2002000a	Addi $v0, $zero, 10 	0	0	2	0x08	 	0	1		1	0	0	1	1		0	0
+0x00400028	0xc0000000	Syscall             	0	0	0	0x00	0x0c	0	0		0	0	0	0	0		0	0

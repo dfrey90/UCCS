@@ -1,0 +1,53 @@
+#!/bin/csh
+#AUTHOR:	Daniel Frey
+#NAME:		softLinkFinder.txt
+#Class		CS2080.001
+#TITLE:		Soft Link Finder
+#DATE DUE:	3/21/18
+#DESCRIPTION:	This script finds all soft links for a given file listed in a file in the current directory. It takes exactly one argument. This argument should be a file containing a list of other files. It will check if the file exists, if not then exit. If it exists, then it will iterate through each of the file names listed. It will check if the file first exists. If it does, then it will search for soft links to it and display them. If the file does not exist, then it will skip that one and try the next one, if applicable. It checks for soft links by using a long listing and grep to search it.
+#EXIT VALUES
+#		0	if successfully completed
+#		10	incorrect number of arguments
+#		20	file does not exist or cannot be read
+
+
+#VALIDATIONS
+
+#set number of arguments into variable
+set numargs = $#argv
+
+#check exactly 1 argument entered
+if ( $numargs != 1 ) then
+	echo Incorrect number of arguments.
+	exit 10
+endif
+
+#set the argument (file name given) to variable
+set listfilenames = $argv[1]
+
+#check to see if the file exists and is readable
+if ( ! ( -r $listfilenames ) ) then
+	echo $listfilenames does not exist or cannot be read.
+	exit 20
+endif
+
+
+#BODY
+
+#for each file name in the file
+foreach filename ( `cat $listfilenames` )
+	#if file does not exist/can't read, don't try to find soft links, else find soft links
+	if ( ! ( -r $filename ) ) then
+		echo $filename does not exist or cannot be read.
+	else	
+		echo All soft links for $filename
+
+		#do a long listing and find soft links for specified file
+		ls -l | grep '^l.*'"${filename}"'$'
+	endif
+
+	echo "========== End of $filename ==========\n"
+end
+
+echo "********** End of File List **********"
+exit 0

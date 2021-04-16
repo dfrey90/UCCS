@@ -1,0 +1,39 @@
+#!/bin/csh
+#AUTHOR:	Daniel Frey
+#CLASS:		CS2080.001 
+#TITLE:		Security
+#DATE DUE:	3/14/18
+#DESCRIPTION:	This program check to see if on a valid terminal, checks the number of arguments (0), and then displays a friendly message.
+#
+#EXIT VALUES
+#		0	if successfully completed
+#		10	incorrect terminal
+#		20	incorrect number of arguments
+
+
+#get terminal info, store in variable
+set mytty = `tty`
+
+#store acceptable terminal info in variable
+set accepttty = "*pts/0"
+
+#store num arguments in variable
+set numargs = $#argv
+
+#store acceptable num arguments in variable
+set accptargs = 0
+
+#checks to see if valid terminal, if not then exit
+if ( $mytty !~ $accepttty ) then
+	exit 10
+endif
+
+#checks to verify the number of arguments is 0, if not then exit
+if ( $numargs != $accptargs ) then
+	echo Incorrect number of arguments.
+	exit 20
+endif
+
+#executes if both terminal and arguments valid
+echo Hello to you on $mytty terminal!
+exit 0

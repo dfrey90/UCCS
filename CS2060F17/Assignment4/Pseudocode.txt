@@ -1,0 +1,61 @@
+srand(time(NULL));
+rand() % 30 + 1;
+
+initialize variables for regular/diesel fuel prices
+Setup mode
+	Initialize variables for Y/N input to '0', and proceeding to false
+	while not continuing
+		Prompt for input for fuel prices
+		Validate input for fuel prices
+		while not a valid input
+			Prompt for input for correctness of prices
+			if invalid, say invalid
+		if yes then continue
+		else if no, change input to invalid to keep loop going
+Customer mode
+	Initialize varialbes for proceed to true, Y/N input to 'n', one or two input, car wash, car wash code, gallons, fuel type, zip code, total customer cost, total pump gallons to 0, total pump fuel costs to 0
+	while continuing
+		while invalid input and not quitting
+			prompt for discount card
+			if not quitting
+				if invalid, say invalid and loop
+			else assume quitting
+				no longer continuing main loop
+				while shutdown pin is incorrect
+					prompt for shutdown pin
+		if not quitting
+			if discount card present, reduce fuel by 0.03/gal
+			reset input for later use
+			while invalid input
+				prompt for car wash
+				if invalid, say invalid
+			if yes, prompt for type
+				while invalid input
+					prompt for car wash option
+					if invalid, say invalid
+				if selection one
+					basic info
+				else
+					premium info
+			reset inputs for later use
+			assume credit card swiped and prompt for zip code
+			while invalid input
+				prompt for fuel grade
+				if invalid, say invalid
+			if input selection one
+				regular fuel
+			else
+				diesel fuel
+			reset input
+			generate random number to pump gas gallons
+				for 0 to random generated gallons
+					display running total price and gallons
+			while invalid input
+				prompt for receipt
+				if invalid, say invalid
+			if yes, print:
+				number of gallons, price/gal, fuel cost, car wash cost and code if included, total cost
+			reset input
+			update total gallons
+			update total fuel cost
+	correct pin entered - display total number gallons/fuel costs for all customers

@@ -1,0 +1,59 @@
+//Include the necessary header file
+#include <stdio.h>
+
+//Define a method max()
+int max(int a,int b)
+{
+    return a>b?a:b;
+}
+
+//Define a method coin_collecting_robot()
+int coin_collecting_robot (int m,int n,int a[][n])
+{
+    //Variable declaration
+    int i=1,j=1,k,c[m][n];
+
+    //Array initialization
+    c[0][0]=a[0][0];   
+
+    //While loop Check, cells in rows are accessible
+    while((i<m)&&(a[i][0]!=-1))
+    {
+        c[i][0]=c[i-1][0]+a[i][0];
+        i=i+1;
+    }
+   
+    //For loop generate the values for rows
+    for(;i<m;i++)
+        c[i][0]=-6;
+   
+    //While loop Check, cells in columns are accessible
+    while((j<n)&&(a[0][j]!=-1))
+    {
+        c[0][j]=c[0][j-1]+a[0][j];
+        j=j+1;
+    }
+   
+    //For loop generate the values for columns
+    for(;j<n;j++)
+        c[0][j]=-6;
+
+    //Find the optimal path for the coin-collecting problem
+    for(i=1;i<m;i++)
+    {
+         for(j=1;j<n;j++)
+         {
+            //Check, cells are accessible
+            if(a[i][j]!=-1)
+                //True, find the path for accessible cells
+                c[i][j]=max(c[i-1][j],c[i][j-1])+a[i][j];
+                
+            //Othewrwise, assign c[i][i] as -6
+            else
+                c[i][j]=-6;
+         }
+    }
+
+    //Return the path
+    return c[m-1][n-1];
+}

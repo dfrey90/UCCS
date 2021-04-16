@@ -1,0 +1,24 @@
+0
+Programming With C
+Larry Page
+1600 Amphitheatre Parkway
+Mountain View
+California
+94043
+81.07
+1
+Data Structures and Algorithms in Java
+Elon Musk
+3500 Deer Creek Road
+Palo Alto
+California
+94304
+32.50
+2
+Computer Science Distilled
+James Gosling
+1234 Main Dr.
+San Francisco 
+California
+94122
+35.70

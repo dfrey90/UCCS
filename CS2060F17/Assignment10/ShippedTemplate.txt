@@ -1,0 +1,13 @@
+Hello [name]
+
+[product] Shipped today to the following address:
+
+[name]
+[streetaddress]
+[city] [state] [zip]
+
+Order Cost: [ordercost]
+
+Click www.tracking.com to track your order. Thank you.
+
+EducationalBooks.com

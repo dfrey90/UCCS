@@ -1,0 +1,117 @@
+Cycle 0 IF: instruction lui	$at, 0x1001 read from 0x00400000
+
+Cycle 1 ID: Instruction lui	$at, 0x1001 DataA = 0x0 DataB = 0x0 Imm = 4097
+Cycle 1 IF: instruction ori	$s0, $at, 0x0000 read from 0x00400004
+
+Cycle 2 EX: Instruction lui	$at, 0x1001 ALUResult = 10010000 RDest=$at
+Cycle 2 ID: Instruction ori	$s0, $at, 0x0000 DataA = 0x0 DataB = 0x0 Imm = 0
+Cycle 2 IF: instruction lw	$t0, 0($s0) read from 0x00400008
+
+Cycle 3 EX: Instruction ori	$s0, $at, 0x0000 ForwardA forwarding 0x10010000 from EX_MEM
+Cycle 3 EX: Instruction ori	$s0, $at, 0x0000 ALUResult = 10010000 RDest=$s0
+Cycle 3 ID: Instruction lw	$t0, 0($s0) DataA = 0x0 DataB = 0x0 Imm = 0
+Cycle 3 IF: instruction addi	$t1, $zero, 3 read from 0x0040000c
+
+Cycle 4 WB: Instruction lui	$at, 0x1001 Result 0x10010000 written to $at
+Cycle 4 EX: Instruction lw	$t0, 0($s0) ForwardA forwarding 0x10010000 from EX_MEM
+Cycle 4 EX: Instruction lw	$t0, 0($s0) ALUResult = 10010000 RDest=$t0
+Cycle 4 ID: Instruction addi	$t1, $zero, 3 DataA = 0x0 DataB = 0x0 Imm = 3
+Cycle 4 IF: instruction beq	$t1, $zero, 0x0004 read from 0x00400010
+
+Cycle 5 WB: Instruction ori	$s0, $at, 0x0000 Result 0x10010000 written to $s0
+Cycle 5 MEM: Instruction lw	$t0, 0($s0) Read 0x14
+Cycle 5 EX: Instruction addi	$t1, $zero, 3 ALUResult = 3 RDest=$t1
+Cycle 5 ID: Instruction beq	$t1, $zero, 0x0004 DataA = 0x0 DataB = 0x0 Imm = 4
+Cycle 5 IF: instruction add	$t0, $t0, $t1 read from 0x00400014
+
+Cycle 6 WB: Instruction lw	$t0, 0($s0) Result 0x14 written to $t0
+Cycle 6 EX: Instruction beq	$t1, $zero, 0x0004 ForwardA forwarding 0x3 from EX_MEM
+Cycle 6 EX: Instruction beq	$t1, $zero, 0x0004 ALUResult = 3 RDest=$zero
+Cycle 6 ID: Instruction add	$t0, $t0, $t1 DataA = 0x14 DataB = 0x0 Imm = 16416
+Cycle 6 IF: instruction addi	$t1, $t1, -1 read from 0x00400018
+
+Cycle 7 WB: Instruction addi	$t1, $zero, 3 Result 0x3 written to $t1
+Cycle 7 EX: Instruction add	$t0, $t0, $t1 ForwardB forwarding 0x3 from EX_MEM
+Cycle 7 EX: Instruction add	$t0, $t0, $t1 ALUResult = 17 RDest=$t0
+Cycle 7 ID: Instruction addi	$t1, $t1, -1 DataA = 0x3 DataB = 0x3 Imm = -1
+Cycle 7 IF: instruction sw	$t0, 0($s0) read from 0x0040001c
+
+Cycle 8 EX: Instruction addi	$t1, $t1, -1 ALUResult = 2 RDest=$t1
+Cycle 8 ID: Instruction sw	$t0, 0($s0) DataA = 0x10010000 DataB = 0x14 Imm = 0
+Cycle 8 IF: instruction j	0x00400010 read from 0x00400020
+
+Cycle 9 WB: Instruction add	$t0, $t0, $t1 Result 0x17 written to $t0
+Cycle 9 EX: Instruction sw	$t0, 0($s0) ALUResult = 10010000 RDest=$zero
+Cycle 9 ID: Instruction j	0x00400010 DataA = 0x0 DataB = 0x10010000 Imm = 4
+Cycle 9 IF: instruction beq	$t1, $zero, 0x0004 read from 0x00400010
+
+Cycle 10 WB: Instruction addi	$t1, $t1, -1 Result 0x2 written to $t1
+Cycle 10 MEM: Instruction sw	$t0, 0($s0) Write 0x17
+Cycle 10 EX: Instruction j	0x00400010 ALUResult = 0 RDest=$zero
+Cycle 10 ID: Instruction beq	$t1, $zero, 0x0004 DataA = 0x2 DataB = 0x0 Imm = 4
+Cycle 10 IF: instruction add	$t0, $t0, $t1 read from 0x00400014
+
+Cycle 11 EX: Instruction beq	$t1, $zero, 0x0004 ALUResult = 2 RDest=$zero
+Cycle 11 ID: Instruction add	$t0, $t0, $t1 DataA = 0x17 DataB = 0x2 Imm = 16416
+Cycle 11 IF: instruction addi	$t1, $t1, -1 read from 0x00400018
+
+Cycle 12 EX: Instruction add	$t0, $t0, $t1 ALUResult = 19 RDest=$t0
+Cycle 12 ID: Instruction addi	$t1, $t1, -1 DataA = 0x2 DataB = 0x2 Imm = -1
+Cycle 12 IF: instruction sw	$t0, 0($s0) read from 0x0040001c
+
+Cycle 13 EX: Instruction addi	$t1, $t1, -1 ALUResult = 1 RDest=$t1
+Cycle 13 ID: Instruction sw	$t0, 0($s0) DataA = 0x10010000 DataB = 0x17 Imm = 0
+Cycle 13 IF: instruction j	0x00400010 read from 0x00400020
+
+Cycle 14 WB: Instruction add	$t0, $t0, $t1 Result 0x19 written to $t0
+Cycle 14 EX: Instruction sw	$t0, 0($s0) ALUResult = 10010000 RDest=$zero
+Cycle 14 ID: Instruction j	0x00400010 DataA = 0x0 DataB = 0x10010000 Imm = 4
+Cycle 14 IF: instruction beq	$t1, $zero, 0x0004 read from 0x00400010
+
+Cycle 15 WB: Instruction addi	$t1, $t1, -1 Result 0x1 written to $t1
+Cycle 15 MEM: Instruction sw	$t0, 0($s0) Write 0x19
+Cycle 15 EX: Instruction j	0x00400010 ALUResult = 0 RDest=$zero
+Cycle 15 ID: Instruction beq	$t1, $zero, 0x0004 DataA = 0x1 DataB = 0x0 Imm = 4
+Cycle 15 IF: instruction add	$t0, $t0, $t1 read from 0x00400014
+
+Cycle 16 EX: Instruction beq	$t1, $zero, 0x0004 ALUResult = 1 RDest=$zero
+Cycle 16 ID: Instruction add	$t0, $t0, $t1 DataA = 0x19 DataB = 0x1 Imm = 16416
+Cycle 16 IF: instruction addi	$t1, $t1, -1 read from 0x00400018
+
+Cycle 17 EX: Instruction add	$t0, $t0, $t1 ALUResult = 1A RDest=$t0
+Cycle 17 ID: Instruction addi	$t1, $t1, -1 DataA = 0x1 DataB = 0x1 Imm = -1
+Cycle 17 IF: instruction sw	$t0, 0($s0) read from 0x0040001c
+
+Cycle 18 EX: Instruction addi	$t1, $t1, -1 ALUResult = 0 RDest=$t1
+Cycle 18 ID: Instruction sw	$t0, 0($s0) DataA = 0x10010000 DataB = 0x19 Imm = 0
+Cycle 18 IF: instruction j	0x00400010 read from 0x00400020
+
+Cycle 19 WB: Instruction add	$t0, $t0, $t1 Result 0x1a written to $t0
+Cycle 19 EX: Instruction sw	$t0, 0($s0) ALUResult = 10010000 RDest=$zero
+Cycle 19 ID: Instruction j	0x00400010 DataA = 0x0 DataB = 0x10010000 Imm = 4
+Cycle 19 IF: instruction beq	$t1, $zero, 0x0004 read from 0x00400010
+
+Cycle 20 WB: Instruction addi	$t1, $t1, -1 Result 0x0 written to $t1
+Cycle 20 MEM: Instruction sw	$t0, 0($s0) Write 0x1A
+Cycle 20 EX: Instruction j	0x00400010 ALUResult = 0 RDest=$zero
+Cycle 20 ID: Instruction beq	$t1, $zero, 0x0004 DataA = 0x0 DataB = 0x0 Imm = 4
+Cycle 20 IF: instruction add	$t0, $t0, $t1 read from 0x00400014
+
+Cycle 21 IF: instruction addi	$v0, $zero, 10 read from 0x00400024
+
+Cycle 22 EX: Instruction beq	$t1, $zero, 0x0004 ALUResult = 0 RDest=$zero
+Cycle 22 ID: Instruction addi	$v0, $zero, 10 DataA = 0x0 DataB = 0x0 Imm = 10
+Cycle 22 IF: instruction syscall	 read from 0x00400028
+
+Cycle 23 EX: Instruction addi	$v0, $zero, 10 ALUResult = A RDest=$v0
+Cycle 23 ID: Instruction syscall	 DataA = 0x0 DataB = 0x0 Imm = 12
+Cycle 23 IF: instruction  read from 0x0040002c
+
+Cycle 24 EX: Instruction syscall	 ALUResult = 0 RDest=$zero
+Cycle 24 ID: Instruction  DataA = 0x0 DataB = 0x0 Imm = 0
+Cycle 24 IF: instruction  read from 0x00400030
+
+Cycle 25 WB: Instruction addi	$v0, $zero, 10 Result 0xa written to $v0
+Cycle 25 EX: Instruction  ALUResult = 0 RDest=$zero
+Cycle 25 ID: Instruction  DataA = 0x0 DataB = 0x0 Imm = 0
+Cycle 25 IF: instruction  read from 0x00400034

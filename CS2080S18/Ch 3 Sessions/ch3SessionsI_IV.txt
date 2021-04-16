@@ -1,0 +1,349 @@
+Script started on Thu 25 Jan 2018 05:07:24 PM MST
+[dfrey@blanca ~]$ mkdir letters reports assignments
+[dfrey@blanca ~]$ cd letters
+[dfrey@blanca letters]$ mkdir friendly formal
+[dfrey@blanca letters]$ cd ../reports
+[dfrey@blanca reports]$ mkdir personal business school
+[dfrey@blanca reports]$ mkdir -p ../assignments/UNIX
+[dfrey@blanca reports]$ mkdir -p ../assignments/UNIX/HWS ../assignments/UNIX/Projects/
+[dfrey@blanca reports]$ cd
+[dfrey@blanca ~]$ ls -Rp
+.:
+[0m[01;34massignments[0m/  ch3SessionII.txt  ch3SessionI.txt  ch3Session.txt  [01;34mletters[0m/  [01;34mperl5[0m/  [01;34mreports[0m/
+
+./assignments:
+[01;34mUNIX[0m/
+
+./assignments/UNIX:
+[01;34mHWs[0m/  [01;34mProjects[0m/
+
+./assignments/UNIX/HWs:
+
+./assignments/UNIX/Projects:
+
+./letters:
+[01;34mformal[0m/  [01;34mfriendly[0m/
+
+./letters/formal:
+
+./letters/friendly:
+
+./perl5:
+
+./reports:
+[01;34mbusiness[0m/  [01;34mpersonal[0m/  [01;34mschool[0m/
+
+./reports/business:
+
+./reports/personal:
+
+./reports/school:
+[dfrey@blanca ~]$ exit
+exit
+
+Script done on Thu 25 Jan 2018 05:08:48 PM MST
+Script started on Thu 25 Jan 2018 05:11:38 PM MST
+[dfrey@blanca ~]$ ls -Rp
+.:
+[0m[01;34massignments[0m/  ch3SessionII.txt  ch3SessionI.txt  [01;34mletters[0m/  [01;34mperl5[0m/  [01;34mreports[0m/
+
+./assignments:
+[01;34mUNIX[0m/
+
+./assignments/UNIX:
+[01;34mHWs[0m/  [01;34mProjects[0m/
+
+./assignments/UNIX/HWs:
+
+./assignments/UNIX/Projects:
+
+./letters:
+[01;34mformal[0m/  [01;34mfriendly[0m/
+
+./letters/formal:
+
+./letters/friendly:
+
+./perl5:
+
+./reports:
+[01;34mbusiness[0m/  [01;34mpersonal[0m/  [01;34mschool[0m/
+
+./reports/business:
+
+./reports/personal:
+
+./reports/school:
+[dfrey@blanca ~]$ cd assignments/UNIX
+[dfrey@blanca UNIX]$ pwd
+/home/dfrey/assignments/UNIX
+[dfrey@blanca UNIX]$ vi hw4
+[?1h=[1;24r[m[m[0m[H[J[24;1H"hw4" [New File][2;1H[1m~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~[0m[24;81H0,0-1[9CAll[1;1H[24;1H[1m-- INSERT --[0m[24;13H[K[24;81H0,1[11CAll[1;1H3[24;81H1,2[1;2H.[24;83H3[1;3H[24;83H4[1;4HT[24;83H5[1;5Hh[24;83H6[1;6Hr[24;83H7[1;7He[24;83H8[1;8He[24;83H9[1;9H[24;83H10[1;10Hw[24;84H1[1;11Hi[24;84H2[1;12Hl[24;84H3[1;13Hd[24;84H4[1;14Hc[24;84H5[1;15Ha[24;84H6[1;16Hr[24;84H7[1;17Hd[24;84H8[1;18Hs[24;84H9[1;19H[24;83H20[1;20Hu[24;84H1[1;21Hs[24;84H2[1;22He[24;84H3[1;23Hd[24;84H4[1;24H[24;84H5[1;25Hi[24;84H6[1;26Hn[24;84H7[1;27H[24;84H8[1;28HU[24;84H9[1;29HN[24;83H30[1;30HI[24;84H1[1;31HX[24;84H2[1;32H[24;84H3[1;33Ha[24;84H4[1;34Hr[24;84H5[1;35He[24;84H6[1;36H[24;84H7[1;37Hs[24;84H8[1;38Hi[24;84H9[1;39Hn[24;83H40[1;40Hg[24;84H1[1;41Hl[24;84H2[1;42He[24;84H3[1;43H[24;84H4[1;44Hc[24;84H5[1;45Hh[24;84H6[1;46Ha[24;84H7[1;47Hr[24;84H8[1;48Ha[24;84H9[1;49Hc[24;83H50[1;50Ht[24;84H1[1;51He[24;84H2[1;52Hr[24;84H3[1;53H,[24;84H4[1;54H[24;84H5[1;55Hs[24;84H6[1;56He[24;84H7[1;57Ht[24;84H8[1;58H,[24;84H9[1;59H[24;83H60[1;60Ha[24;84H1[1;61Hn[24;84H2[1;62Hd[24;84H3[1;63H[24;84H4[1;64Hm[24;84H5[1;65Hu[24;84H6[1;66Hl[24;84H7[1;67Ht[24;84H8[1;68Hi[24;84H9[1;69Hp[24;83H70[1;70Hl[24;84H1[1;71He[24;84H2[1;72H[24;84H3[1;73Hc[24;84H4[1;74Hh[24;84H5[1;75Hr[24;84H6[1;76H[1;75H[K[24;84H5[1;75Ha[24;84H6[1;76Hr[24;84H7[1;77Ha[24;84H8[1;78Hc[24;84H9[1;79Ht[24;83H80[1;80He[24;84H1[1;81Hr[24;84H2[1;82H.[24;84H3[1;83H[2;1H[K[24;81H2,1 [2;1H4[24;83H2[2;2H.[24;83H3[2;3H[24;83H4[2;4HA[24;83H5[2;5H[24;83H6[2;6Hs[24;83H7[2;7Hi[24;83H8[2;8Hn[24;83H9[2;9Hg[24;83H10[2;10Hl[24;84H1[2;11He[24;84H2[2;12H[24;84H3[2;13Hc[24;84H4[2;14Hh[24;84H5[2;15Hr[24;84H6[2;16Ha[24;84H7[2;17H[2;16H[K[24;84H6[2;16H[2;15H[K[24;84H5[2;15Ha[24;84H6[2;16Hr[24;84H7[2;17Ha[24;84H8[2;18Hc[24;84H9[2;19Ht[24;83H20[2;20He[24;84H1[2;21Hr[24;84H2[2;22H[24;84H3[2;23Hw[24;84H4[2;24Hi[24;84H5[2;25Hl[24;84H6[2;26Hd[24;84H7[2;27Hc[24;84H8[2;28Ha[24;84H9[2;29Hr[24;83H30[2;30Hd[24;84H1[2;31H[24;84H2[2;32Hi[24;84H3[2;33Hs[24;84H4[2;34H[24;84H5[2;35H'[24;84H6[2;36H?[24;84H7[2;37H'[24;84H8[2;38H.[24;84H9[2;39H[3;1H[K[24;81H3,1 [3;1H5[24;83H2[3;2H.[24;83H3[3;3H[24;83H4[3;4HS[24;83H5[3;5He[24;83H6[3;6Ht[24;83H7[3;7H[24;83H8[3;8Ho[24;83H9[3;9Hf[24;83H10[3;10H[24;84H1[3;11Hc[24;84H2[3;12Hh[24;84H3[3;13Ha[24;84H4[3;14Hr[24;84H5[3;15Ha[24;84H6[3;16Hc[24;84H7[3;17Ht[24;84H8[3;18He[24;84H9[3;19Hr[24;83H20[3;20H[24;84H1[3;21Hw[24;84H2[3;22Hi[24;84H3[3;23Hl[24;84H4[3;24Hd[24;84H5[3;25H[24;84H6[3;26H[24;84H5[3;25Hc[24;84H6[3;26Ha[24;84H7[3;27Hr[24;84H8[3;28Hd[24;84H9[3;29H[24;83H30[3;30Hi[24;84H1[3;31Hs[24;84H2[3;32H[24;84H3[3;33H'[24;84H4[3;34H[[24;84H5[3;35H.[24;84H6[3;36H.[24;84H7[3;37H.[24;84H8[3;38H][24;84H9[3;39H'[24;83H40[3;40H.[24;84H1[3;41H[3;40H[K[24;84H0[3;40H[24;84H1[3;41Ht[24;84H2[3;42Hh[24;84H3[3;43Ht[24;84H4[3;44H[3;43H[K[24;84H3[3;43Ha[24;84H4[3;44Ht[24;84H5[3;45H[24;84H6[3;46Hc[24;84H7[3;47Ha[24;84H8[3;48Hn[24;84H9[3;49H[24;83H50[3;50Hm[24;84H1[3;51Ha[24;84H2[3;52Ht[24;84H3[3;53Hh[24;84H4[3;54H[3;53H[K[24;84H3[3;53Hc[24;84H4[3;54Hh[24;84H5[3;55H[24;84H6[3;56Ha[24;84H7[3;57Hn[24;84H8[3;58Hy[24;84H9[3;59H[24;83H60[3;60Hs[24;84H1[3;61Hi[24;84H2[3;62Hn[24;84H3[3;63Hg[24;84H4[3;64Hl[24;84H5[3;65He[24;84H6[3;66H[24;84H7[3;67Hc[24;84H8[3;68Hh[24;84H9[3;69Ha[24;83H70[3;70Hr[24;84H1[3;71Ha[24;84H2[3;72Hc[24;84H3[3;73Ht[24;84H4[3;74He[24;84H5[3;75Hr[24;84H6[3;76H[24;84H7[3;77Hi[24;84H8[3;78Hn[24;84H9[3;79H[24;83H80[3;80Ht[24;84H1[3;81Hh[24;84H2[3;82He[24;84H3[3;83H[24;84H4[3;84Hb[24;84H5[3;85Hr[24;84H6[3;86Ha[24;84H7[3;87Hc[24;84H8[3;88Hk[24;84H9[3;89He[24;83H90[3;90Ht[24;84H1[3;91Hs[24;84H2[3;92H.[24;84H3[3;93H[4;1H[K[24;81H4,1 [4;1H6[24;83H2[4;2H.[24;83H3[4;3H[24;83H4[4;4HT[24;83H5[4;5Hh[24;83H6[4;6He[24;83H7[4;7H[24;83H8[4;8Hz[24;83H9[4;9He[24;83H10[4;10Hr[24;84H1[4;11Ho[24;84H2[4;12H-[24;84H3[4;13Ho[24;84H4[4;14Hr[24;84H5[4;15H-[24;84H6[4;16Hm[24;84H7[4;17Ho[24;84H8[4;18Hr[24;84H9[4;19He[24;83H20[4;20H[24;84H1[4;21Hw[24;84H2[4;22Hi[24;84H3[4;23Hl[24;84H4[4;24Hd[24;84H5[4;25H[24;84H6[4;26H[24;84H5[4;25Hc[24;84H6[4;26Ha[24;84H7[4;27Hr[24;84H8[4;28Hd[24;84H9[4;29H[24;83H30[4;30Hi[24;84H1[4;31Hs[24;84H2[4;32H[24;84H3[4;33H*[24;84H4[4;34H[4;33H[K[24;84H3[4;33H'[24;84H4[4;34H*[24;84H5[4;35H'[24;84H6[4;36H.[24;84H7[4;37H[5;1H[K[24;81H5,1 [5;1H1[24;83H2[5;2H3[24;83H3[5;3H.[24;83H4[5;4H[24;83H5[5;5HA[24;83H6[5;6H[24;83H7[5;7HF[24;83H8[5;8HI[24;83H9[5;9HF[24;83H10[5;10HO[24;84H1[5;11H[24;84H2[5;12Hi[24;84H3[5;13Hs[24;84H4[5;14H[24;84H5[5;15Hf[24;84H6[5;16Hi[24;84H7[5;17Hr[24;84H8[5;18Hs[24;84H9[5;19Ht[24;83H20[5;20H[24;84H1[5;21Hi[24;84H2[5;22Hn[24;84H3[5;23H,[24;84H4[5;24H[24;84H5[5;25Hf[24;84H6[5;26Hi[24;84H7[5;27Hr[24;84H8[5;28Hs[24;84H9[5;29Ht[24;83H30[5;30H[24;84H1[5;31Ho[24;84H2[5;32Hu[24;84H3[5;33Ht[24;84H4[5;34H[24;84H5[5;35Hf[24;84H6[5;36Hi[24;84H7[5;37Hl[24;84H8[5;38He[24;84H9[5;39H,[24;83H40[5;40H[24;84H1[5;41Ha[24;84H2[5;42H[5;41H[K[24;84H1[5;41Ha[24;84H2[5;42Hl[24;84H3[5;43Hs[24;84H4[5;44Ho[24;84H5[5;45H[24;84H6[5;46Hk[24;84H7[5;47Hn[24;84H8[5;48Ho[24;84H9[5;49Hw[24;83H50[5;50Hs[24;84H1[5;51H[24;84H2[5;52H[24;84H1[5;51H[5;50H[K[24;84H0[5;50Hn[24;84H1[5;51H[24;84H2[5;52Ha[24;84H3[5;53Hs a[24;84H7[5;57Hp[24;84H8[5;58Hi[24;84H9[5;59Hp[24;83H60[5;60He[24;84H1[5;61H.[24;84H2[5;62H[24;1H[K[5;61H[24;81H5,61[10CAll[5;61H[24;81H[K[24;1H:wq
+"hw4" [New] 5L, 314C written
+[?1l>
+
+[dfrey@blanca ~]$ vi assignments/UNIX/hw4
+[?1h=[1;24r[m[m[0m[H[J[24;1H"assignments/UNIX/hw4" 5L, 314C[1;1H3. Three wildcards used in UNIX are single character, set, and multiple character.
+4. A single character wildcard is '?'.
+5. Set of character wildcard is '[...]' that can match any single character in the brackets.
+6. The zero-or-more wildcard is '*'.
+13. A FIFO is first in, first out file, also known as a pipe.
+[1m~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~[0m[24;80H5,1[11CAll[5;1H[24;1H[K[24;1H:q
+[dfrey@blanca UNIX]$ cp hw4 hw4.bk
+[dfrey@blanca UNIX]$ cd
+[dfrey@blanca ~]$ find . -name hw4*
+./assignments/UNIX/hw4
+./assignments/UNIX/hw4.bk
+[dfrey@blanca ~]$ cd assignments/UNIX
+[dfrey@blanca UNIX]$ pwd
+/home/dfrey/assignments/UNIX
+[dfrey@blanca UNIX]$ ln hw4 hw4HL
+[dfrey@blanca UNIX]$ ln -s hw4 hw4SL
+[dfrey@blanca UNIX]$ ls -i hw4 hw4.bk hw4HL hw4SL
+2133106 hw4  2133108 hw4.bk  2133106 hw4HL  2133109 [0m[01;36mhw4SL[0m
+[dfrey@blanca UNIX]$ #Inodes not all the same, only hard links will have same inode.
+[dfrey@blanca UNIX]$ exit
+exit
+
+Script done on Thu 25 Jan 2018 05:39:57 PM MST
+Script started on Fri 26 Jan 2018 11:55:26 AM MST
+[dfrey@blanca ~]$ mkdir backups
+[dfrey@blanca ~]$ find assignments/UNIX -name hw4* -exec cp {} backups \;
+[dfrey@blanca ~]$ ls -li assignments/UNIX/hw4*
+2133205 -rw-r--r--+ 1 dfrey domain users 314 Jan 26 11:36 assignments/UNIX/hw4
+2133108 -rw-r--r--+ 1 dfrey domain users 314 Jan 25 17:19 assignments/UNIX/hw4.bk
+2133106 -rw-r--r--+ 1 dfrey domain users 314 Jan 25 17:18 assignments/UNIX/hw4HL
+2133109 lrwxrwxrwx. 1 dfrey domain users   3 Jan 25 17:35 [0m[01;36massignments/UNIX/hw4SL[0m -> hw4
+[dfrey@blanca ~]$ rm assignments/UNIX/hw4
+[dfrey@blanca ~]$ find . -name hw4*
+./assignments/UNIX/hw4HL
+./assignments/UNIX/hw4SL
+./assignments/UNIX/hw4.bk
+./backups/hw4
+./backups/hw4.bk
+./backups/hw4HL
+./backups/hw4SL
+[dfrey@blanca ~]$ cat assignments/UNIX/hw4*
+3. Three wildcards used in UNIX are single character, set, and multiple character.
+4. A single character wildcard is '?'.
+5. Set of character wildcard is '[...]' that can match any single character in the brackets.
+6. The zero-or-more wildcard is '*'.
+13. A FIFO is first in, first out file, also known as a pipe.
+3. Three wildcards used in UNIX are single character, set, and multiple character.
+4. A single character wildcard is '?'.
+5. Set of character wildcard is '[...]' that can match any single character in the brackets.
+6. The zero-or-more wildcard is '*'.
+13. A FIFO is first in, first out file, also known as a pipe.
+cat: assignments/UNIX/hw4SL: No such file or directory
+[dfrey@blanca ~]$ cp /assignments/UNIX/hw4.bk assignments/UNIX/hw4
+[dfrey@blanca ~]$ rm assignments/UNIX/hw4SL
+[dfrey@blanca ~]$ ln -s assignments/UNIX/hw4 assignments/UNIX/hw4SL
+[dfrey@blanca ~]$ ls -Rp
+.:
+[0m[01;34massignments[0m/  ch3SessionIII.txt  ch3SessionI.txt  [01;34mperl5[0m/
+[01;34mbackups[0m/      ch3SessionII.txt   [01;34mletters[0m/         [01;34mreports[0m/
+
+./assignments:
+[01;34mUNIX[0m/
+
+./assignments/UNIX:
+hw4  hw4.bk  hw4HL  [40;31;01mhw4SL[0m  [01;34mHWs[0m/  [01;34mProjects[0m/
+
+./assignments/UNIX/HWs:
+
+./assignments/UNIX/Projects:
+
+./backups:
+hw4  hw4.bk  hw4HL  hw4SL
+
+./letters:
+[01;34mformal[0m/  [01;34mfriendly[0m/
+
+./letters/formal:
+
+./letters/friendly:
+
+./perl5:
+
+./reports:
+[01;34mbusiness[0m/  [01;34mpersonal[0m/  [01;34mschool[0m/
+
+./reports/business:
+
+./reports/personal:
+
+./reports/school:
+[dfrey@blanca ~]$ exit
+exit
+
+Script done on Fri 26 Jan 2018 12:0:47 PM MST
+Script started on Fri 26 Jan 2018 12:26:08 PM MST
+[dfrey@blanca ~]$ ls assignments/UNIX/HWs
+hw4  hw4.bk  hw4HL  [0m[01;36mhw4SL[0m
+[dfrey@blanca ~]$ mv assignments/UNIX/HWs/hw4.bk assignments/UNIX/HWs/hw4.bak
+[dfrey@blanca ~]$ vi letters/friendly/friendly.1
+[?1h=[1;24r[m[m[0m[H[J[24;1H"letters/friendly/friendly.1" [New File][2;1H[1m~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~[0m[24;80H0,0-1[9CAll[1;1H[24;1H[1m-- INSERT --[0m[24;13H[K[24;80H0,1[11CAll[1;1HH[24;80H1,2[1;2Hi[24;82H3[1;3H[24;82H4[1;4Hf[24;82H5[1;5Hr[24;82H6[1;6Hi[24;82H7[1;7He[24;82H8[1;8Hd[24;82H9[1;9H[1;8H[K[24;82H8[1;8Hn[24;82H9[1;9Hd[24;82H10[1;10H![24;83H1[1;11H[24;83H2[1;12HB[24;83H3[1;13Hy[24;83H4[1;14He[24;83H5[1;15H[24;83H6[1;16Hf[24;83H7[1;17Hr[24;83H8[1;18Hi[24;83H9[1;19He[24;82H20[1;20Hn[24;83H1[1;21Hd[24;83H2[1;22H![24;83H3[1;23H:[24;83H4[1;24H[1;23H[K[24;83H3[1;23H[24;1H[K[1;22H[24;80H1,22[10CAll[1;22H[24;80H[K[24;1H:w
+"letters/friendly/friendly.1" [New] 1L, 23C written[28C1,22[10CAll[24;80H[K[24;80H1,22[10CAll[1;22H[24;1H[K[24;1H:q
+[?1l>[24;1H[K[24;1H[dfrey@blanca ~]$ vi letters/formal/formal.1
+[?1h=[1;24r[m[m[0m[H[J[24;1H"letters/formal/formal.1" [New File][2;1H[1m~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~[0m[24;80H0,0-1[9CAll[1;1H[24;1H[1m-- INSERT --[0m[24;13H[K[24;80H0,1[11CAll[1;1HT[24;80H1,2[1;2Hi[24;82H3[1;3Ht[24;82H4[1;4Hl[24;82H5[1;5He[24;82H6[1;6H"[24;82H7[1;7H[24;82H6[1;6H[24;82H5[1;5H[24;82H4[1;4H[24;82H3[1;3H[24;82H2[1;2H[24;82H1[1;1H"Title"[24;82H2[1;2H[24;82H3[1;3H[24;82H4[1;4H[24;82H5[1;5H[24;82H6[1;6H[24;82H7[1;7H[24;82H8[1;8H[24;1H[K[1;7H[24;80H1,7[11CAll[1;7H[24;80H[K[24;1H:wq
+"letters/formal/formal.1" [New] 1L, 8C written
+[?1l>
+
+[dfrey@blanca ~]$ cp letters/formal/formal.1 letters/formal/formal.2
+[dfrey@blanca ~]$ vi letters/formal/formal.2
+[?1h=[1;24r[m[m[0m[H[J[24;1H"letters/formal/formal.2" 1L, 8C[1;1H"Title"
+[1m~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~[0m[24;80H1,1[11CAll[1;1H[24;82H2[1;2H[24;1H[1m-- INSERT --[0m[24;13H[K[24;80H1,3[11CAll[1;3H[24;82H2[1;2HNTitle"[24;82H3[1;3HeTitle"[24;82H4[1;4HwTitle"[24;82H5[1;5H Title"[24;82H6[1;6H[24;1H[K[1;5H[24;80H1,5[11CAll[1;5H[24;80H[K[24;1H:wq
+"letters/formal/formal.2" 1L, 12C written
+[?1l>
+
+[dfrey@blanca ~]$ cat letters/formal/formal.*
+"Title"
+"New Title"
+[dfrey@blanca ~]$ mkdir busLetters
+[dfrey@blanca ~]$ mv letters/formal busLetters
+[dfrey@blanca ~]$ ls -Rp
+.:
+[0m[01;34massignments[0m/  [01;34mbusLetters[0m/        ch3SessionII.txt  ch3SessionIV.txt  [01;34mperl5[0m/
+[01;34mbackups[0m/      ch3SessionIII.txt  ch3SessionI.txt   [01;34mletters[0m/          [01;34mreports[0m/
+
+./assignments:
+[01;34mUNIX[0m/
+
+./assignments/UNIX:
+hw4  hw4.bk  hw4HL  [40;31;01mhw4SL[0m  [01;34mHWs[0m/  [01;34mProjects[0m/
+
+./assignments/UNIX/HWs:
+hw4  hw4.bak  hw4HL  [01;36mhw4SL[0m
+
+./assignments/UNIX/Projects:
+
+./backups:
+hw4  hw4.bk  hw4HL  hw4SL
+
+./busLetters:
+[01;34mformal[0m/
+
+./busLetters/formal:
+formal.1  formal.2
+
+./letters:
+[01;34mfriendly[0m/
+
+./letters/friendly:
+friendly.1
+
+./perl5:
+
+./reports:
+[01;34mbusiness[0m/  [01;34mpersonal[0m/  [01;34mschool[0m/
+
+./reports/business:
+
+./reports/personal:
+
+./reports/school:
+[dfrey@blanca ~]$ exit
+exit
+
+Script done on Fri 26 Jan 2018 12:42:38 PM MST

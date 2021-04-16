@@ -1,0 +1,9 @@
+Hello [name]
+
+We hope you are enjoying your book [product]
+
+To provide a review, please visit www.educationalbooks.com
+
+Vist us again [name]
+
+EducationalBooks.com

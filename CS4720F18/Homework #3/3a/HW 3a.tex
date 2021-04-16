@@ -1,0 +1,201 @@
+\documentclass[11pt]{article}  
+\usepackage[margin=.5in]{geometry}
+\parindent=0in
+\parskip=8pt
+\usepackage{fancyhdr,amssymb,amsmath, graphicx, listings,float,subfig,enumerate,epstopdf,color,multirow,setspace,bm,textcomp}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+
+\pagestyle{fancy}
+
+
+\begin{document} 
+
+\lhead{Assignment \# 3a}
+\chead{Daniel Frey}
+\rhead{\today}
+
+\begin{center}\begin{Large}
+CS 4720/5720 Design and Analysis of Algorithms \\
+Homework \#3a \\
+Daniel Frey
+\end{Large}
+\end{center}
+
+\section*{Answers to homework problems:}
+
+\begin{enumerate}
+%1
+	\item
+		 Solve recurrence relations with Master Theorem. If it can't be solved with Master Theorem, then explain why. 
+		\begin{enumerate}[(a)]
+%1a
+			\item
+				$ T(n) = 5T(\frac{n}{3}) + n $ \\
+					\hspace*{.4cm}
+					$ a=5, b=3, d=1, b^d=3^1=3 $ \\
+					\hspace*{.4cm}
+					$ a=5 > 3=b^d \Rightarrow $ Case 3 \\
+					\hspace*{.4cm}
+					$ T(n) \in \Theta(n^{\log_3 5}) $ \\
+%1b
+			\item
+				$ T(n) = 2.7T(\frac{n}{5}) + n^2 $ \\
+					\hspace*{.4cm}
+					$ a=2.7, b=5, d=2, b^d=5^2=25 $ \\
+					\hspace*{.4cm}
+					$ a=2.7 < 25=b^d \Rightarrow $ Case 1 \\
+					\hspace*{.4cm}
+					$ T(n) \in \Theta(n^2) $ \\
+%1c
+			\item
+				$ T(n) = 2T(n-1) + n $ \\
+					Master Theorem doesn't apply. Problem is shrinking by constant amount. \\
+%1d
+			\item
+				$ T(n) = 1.1T(0.2n) + 1 $ 
+				\hspace*{.4cm} \textit{(Note: $ 0.2=\frac{1}{5} $)} \\
+					\hspace*{.4cm}
+					$ a=1.1, b=5, d=0, b^d=5^0=1 $ \\
+					\hspace*{.4cm}
+					$ a=1.1 > 1 =b^d \Rightarrow $ Case 3 \\
+					\hspace*{.4cm}
+					$ T(n) \in \Theta(n^{\log_5 1.1}) $ \\
+%1e
+			\item
+				$ T(n) = 2T(\frac{n}{2}) + n \log_2 n $ \\
+					\hspace*{.4cm}
+					$ a=2, b=2, d=1, b^d=2^1=2 $ \\
+					\hspace*{.4cm}
+					$ a=2 = 2=b^d \Rightarrow $ Case  2\\
+					\hspace*{.4cm}
+					$ T(n) \in \Theta(n {\log_2}^2 n) $ \\
+%1f
+			\item
+				$ T(n) = 2T(\frac{n}{2}) + \sqrt{n} $ \\
+					\hspace*{.4cm}
+					$ a=2, b=2, d=\frac{1}{2}, b^d=2^{\frac{1}{2}}=\sqrt{2} $ \\
+					\hspace*{.4cm}
+					$ a=2 > \sqrt{2}=b^d \Rightarrow $ Case 3 \\
+					\hspace*{.4cm}
+					$ T(n) \in \Theta(n^{\log_2 2}) = \Theta(n) $ \\
+%1g
+			\item
+				$ T(n) = 4T(\frac{n}{2}) + \sqrt{n^4-n+10} $ \\
+					\hspace*{.4cm}
+					Informal: $ \sqrt{n^4-n+10} \approx \sqrt{n^4} = n^2 \in \Theta(n^2) $ \\
+					\hspace*{.4cm}
+					Formal: $ \lim_{n\to\infty}\frac{\sqrt{n^4-n+10}}{n^2}
+							= \lim_{n\to\infty} \sqrt{\frac{n^4-n+10}{n^4}} 
+							= \lim_{n\to\infty} \sqrt{1- \frac{1}{n^3} - \frac{10}{n^4}} 
+							= \sqrt{1} = 1 \in \Theta(n^2) $
+					\hspace*{.4cm}
+					$ a=4, b=2, d=2, b^d=2^2=4 $ \\
+					\hspace*{.4cm}
+					$ a=4 = 4=b^d \Rightarrow $ Case 2 \\
+					\hspace*{.4cm}
+					$ T(n) \in \Theta(n^2 \log_2 n) $ \\
+%1h
+			\item
+				$ T(n) = 7T(\frac{n}{3}) + \sum_{i=1}^{n} i $ \\
+					\hspace*{.4cm}
+					$ \sum_{i=1}^{n} i = \frac{1}{2}n(n+1) \in \Theta(n^2) $ \\
+					\hspace*{.4cm}
+					$ a=7, b=3, d=2, b^d=3^2=9 $ \\
+					\hspace*{.4cm}
+					$ a=7 < 9=b^d \Rightarrow $ Case  1\\
+					\hspace*{.4cm}
+					$ T(n) \in \Theta(n^2) $ \\
+%1i
+			\item
+				$ T(n) = 4T(\frac{n}{2}) + n^n $ \\
+					Master Theorem doesn't apply. $ f(n)=n^n $ is not polynomial. \\
+%1j
+			\item
+				$ T(n) = 8T(\frac{n}{3}) + n^3 $ \\
+					\hspace*{.4cm}
+					$ a=8, b=3, d=3, b^d=3^3=27 $ \\
+					\hspace*{.4cm}
+					$ a=8 < 27=b^d \Rightarrow $ Case 1 \\
+					\hspace*{.4cm}
+					$ T(n) \in \Theta(n^3) $ \\
+		\end{enumerate}
+
+%2		 
+	\item 
+		Apply the Master Theorem to the divide-and-conquer algorithms to find worst-case order of growth.
+		\begin{enumerate}[(a)]
+%2a
+			\item 
+				Divide into 3 chunks, solve 1 chunk, split is constant division. \\
+					\hspace*{.4cm}
+					$ a=1, b=3, d=0, b^d=3^0=1 $ \\
+					\hspace*{.4cm}
+					$ a=1 = 1=b^d \Rightarrow $ Case 2 \\
+					\hspace*{.4cm}
+					$ T(n) \in \Theta(n^0 \log_3 n) = \Theta(\log_3 n) $ \\
+%2b
+			\item
+				Divide into 2 chunks, solve 2 chunks and add, split is constant division, addition is constant. \\
+					\hspace*{.4cm}
+					$ a=2, b=2, d=0, b^d=2^0=1 $ \\
+					\hspace*{.4cm}
+					$ a=2 > 1=b^d \Rightarrow $ Case 3 \\
+					\hspace*{.4cm}
+					$ T(n) \in \Theta(n^{\log_2 2}) = \Theta(n) $ \\				
+		\end{enumerate}
+
+%3
+	\item
+		 Re-write merge sort algorithm broken into k pieces. \\
+		 	\hspace*{.4cm}
+		 	MergeSort(A[0,n-1]) \\
+		 		\hspace*{.8cm}
+		 		if n $ > $ 1 : \\
+		 			\hspace*{1.2cm}
+		 			return Merge(MergeSort of $k$ "chunks") \\
+				\hspace*{.8cm}
+				ret A\\
+			\hspace*{.4cm}
+			Merge (A[ ] "chunks") \\
+				\hspace*{.8cm}
+				while (items to be sorted) \\
+					\hspace*{1.2cm}
+					compare elements \\
+						\hspace*{1.6cm}
+						insert lower into output array \\
+					\hspace*{1.2cm}
+					increment output array counter
+		\begin{enumerate}[(a)]
+%3a
+			\item 
+				Worst-case efficiency using Master Theorem. \\
+					\hspace*{.4cm}
+					$ T_{Merge}(n) = \sum_{i=0}^{n-1}1 = n \in \Theta(n) $ \\
+					\hspace*{.4cm}
+					$ T_{MergeSort}(n) = kT(\frac{n}{k}) + \Theta(n) $ \\
+						\hspace*{.8cm}
+						$ a=k, b=k, d=1, b^d=k^1=k $ \\
+						\hspace*{.8cm}
+						$ a=k = k=b^k \Rightarrow $ Case 2 \\
+						\hspace*{.8cm}
+						$ T(n) \in \Theta(n \log_k n) $ \\
+				
+%3b
+			\item
+				 Better or worse than original merge sort (splits into 2)? \\
+					\hspace*{.4cm}
+					Merge sort into k pieces is in the same class as the ordinary merge sort, however, note that the log bases are different. Therefore, for $ k>2 $ merge sort into k pieces will be slightly worse.
+				
+%3c			
+			\item
+				 Why choose ordinary $ k=2 $ merge sort over merge sort that splits into $ k>2 $ pieces? \\
+					\hspace*{.4cm}
+					Ordinary merge sort, for $ k=2 $, is more often chosen because there is less overhead when combining, since there are less comparisons when compared to a merge sort that's split into $ k>2 $ pieces.
+			
+		\end{enumerate}
+	
+	
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,181 @@
+\documentclass[11pt]{article}  
+\usepackage[margin=.5in]{geometry}
+\parindent=0in
+\parskip=8pt
+\usepackage{fancyhdr,amssymb,amsmath, graphicx, listings,float,subfig,enumerate,epstopdf,color,multirow,setspace,bm,textcomp}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+
+\pagestyle{fancy}
+
+
+\begin{document} 
+
+\lhead{Assignment \# 2}
+\chead{Daniel Frey}
+\rhead{\today}
+
+\begin{center}\begin{Large}
+CS 4720/5720 Design and Analysis of Algorithms \\
+Homework \#2 \\
+Daniel Frey
+\end{Large}
+\end{center}
+
+
+\section*{Answers to homework problems:}
+
+\begin{enumerate}
+%#1
+	\item Book Problem: 3.2.3 \textit{(Gadget Testing)} 
+		 Algorithm to determine highest floor gadget can fall without breaking. \\\\
+		 Drop from each floor sequentially, if gadget broken, return current floor - 1. \\
+		 testGadget(n) \textit{(n is total number floors)} \\
+			\hspace*{.4cm}
+			for i = 1 to n : \\
+				\hspace*{.8cm}
+				if broken : \\
+					\hspace*{1.2cm}
+					return i-1 \\\\
+		 Best-case: 1 iteration (breaks first floor) \\
+		 	\hspace*{.4cm}
+		 	$ T(n)= \sum_{i=1}^{1}1 = 1 \in \Theta(1) $ \\
+		  Worst-case: all iterations (doesn't break) \\
+		  	\hspace*{.4cm}
+		  	$ T(n)= \sum_{i=1}^{n}1 = n \in \Theta(n) $ \\
+
+%#2		 
+	\item Book Problem 3.2.8 \textit{(Counting)}
+		Count all substrings that begin with A and end with B.
+		\begin{enumerate}[(a)]
+%#2a
+			\item Brute force algorithm, best and worst-case efficiencies. \\\\
+				Find A, find all subsequent B's and increment counter. Advance to next position, then repeat. \\
+				countSubstr(S[0,n-1]) \\
+				\hspace*{.4cm}
+				count = 0 \\
+				\hspace*{.4cm}
+				for i = 0 to n-2 : \\
+					\hspace*{.8cm}
+					if S[i] == 'A' : \\
+						\hspace*{1.2cm}
+						for j = i + 1 to n-1 : \\
+							\hspace*{1.6cm}
+							if S[j] == 'B' : \\
+								\hspace*{2cm}
+								count = count + 1 \\
+				\hspace*{.4cm}
+				return count	\\\\
+			Best-case: No A's \textit{(Second for loop doesn't execute)}\\
+				\hspace*{.4cm}
+				$ T(n) = \sum_{i=0}^{n-2} 1 = n - 1 \in \Theta(n) $ \\
+			Worst-case: All A's \textit{(Iterate through entirety of each for loop)} \\
+				\hspace*{.4cm}
+				$ T(n) = \sum_{i=0}^{n-2} \sum_{j=i+1}^{n-1} 2 = n(n-1) \in \Theta(n^2) $ \\
+			
+%#2b
+			\item More efficient algorithm. \textit{[In class of $ \Theta(n) $]}\\\\
+				Count A's and B's in one pass. Sum A's and add to running total when B found. \\
+				countSubstr(S[0,n-1]) \\
+					\hspace*{.4cm}
+					count = 0 \\
+					\hspace*{.4cm}
+					countA = 0 \\
+					\hspace*{.4cm}
+					for i = 0 to n-1 : \\
+						\hspace*{.8cm}
+						if S[i] == 'A' : \\
+							\hspace*{1.2cm}
+							countA = countA + 1 \\
+						\hspace*{.8cm}
+						if S[i] == 'B' : \\
+							\hspace*{1.2cm}
+							count = count + countA \\
+					return count \\\\
+				
+		\end{enumerate}
+
+%#3
+	\item \textit{(Knapsack)}
+		\begin{enumerate}[(a)]
+%#3a
+			\item Exhaustive algorithm, and determine efficiency class. \\\\
+				Iterate through each permutation checking to see if specific item is present. If present, add value and weight to running total. If current combination of items satisfies and is best, mark as best.  \\
+				exhaustiveKS(maxWeight, value[0,n-1], weight[0,n-1]) \\
+					\hspace*{.4cm}
+					bestVal = 0 \\
+					\hspace*{.4cm}
+					bestComb = 0 \\
+					\hspace*{.4cm}
+					for i = 0 to $ 2^n $ : \\
+						\hspace*{.8cm}
+						currVal = 0 \\
+						\hspace*{.8cm}
+						currWeight = 0 \\
+						\hspace*{.8cm}
+						for j = 0 to n-1 : \\
+							\hspace*{1.2cm}
+							if j is in i : \\
+								\hspace*{1.6cm}
+								currVal = currVal + v[j] \\
+								\hspace*{1.6cm}
+								currWeight = currWeight + w[j] \\
+						\hspace*{.8cm}
+						if currVal $ > $ bestVal and currWeight $ \leq $ maxWeight : \\
+							\hspace*{1.2cm}
+							bestVal = currVal \\
+							\hspace*{1.2cm}
+							bestComb = i \\
+					\hspace*{.4cm}
+					return bestComb[ ], currVal, currWeight  //best is current at end \\
+				
+				Efficiency class: \\
+					\hspace*{.4cm}
+					$ T(n) = \sum_{i=0}^{2^n} \sum_{j=0}^{n-1} 1 = n(2^n+1) \in \Theta(n2^n) $ \\\\
+%#3b
+			\item Greedy algorithm that selects next highest value item that fits in capacity left, and adds to K. \\\\
+				greedyKS(maxWeight, value[0,n-1], weight[0,n-1]) \\
+					\hspace*{.4cm}
+					currVal = 0 \\
+					\hspace*{.4cm}
+					currWeight = 0 \\
+					\hspace*{.4cm}
+					numVisited = 0 \\
+					\hspace*{.4cm}
+					highIndx = 0 \\
+					\hspace*{.4cm}
+					while currWeight $ < $ maxWeight and numVisited $ < $ n : \\
+						\hspace*{.8cm}
+						highIndx = nextHighest(value[0,n-1], value[highIndx]) \\
+						\hspace*{.8cm}
+						tempWeight = currWeight + weight[highIndx] \\
+						\hspace*{.8cm}
+						if tempWeight $ \leq $ maxWeight \\
+							\hspace*{1.2cm}
+							currVal = currVal + value[highIndx] \\
+							\hspace*{1.2cm}
+							currWeight = currWeight + weight[highIndx] \\
+							\hspace*{1.2cm}
+							add highIndx to K \\
+						\hspace*{.8cm}
+						numVisited = numVisited + 1 \\
+						
+				%\textit{(Function to find the next highest value, returns index of value)} \\
+				%maxHighest(value[0,n-1], highVal) \\
+					%\hspace*{.4cm}
+					%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+				
+				Efficiency class: \\
+					\hspace*{.4cm}
+					(nextHighest() $ \in \Theta(n)) $ \\
+					\hspace*{.4cm}
+					$ T(n)=\sum_{i=0}^{n-1} \sum_{j=0}^{n-1} 1 = n^2 \in \Theta(n^2) $ \\
+		
+%#3c			
+			\item Greedy algorithm does not solve the problem by always finding the best set of items. For example, consider n=3: v[100, 75, 75], and w=[9000, 4500, 4500]. Exhaustive would pick the two 75 items each weighing 4500, for a total of 150 value and 9000 weight. The greedy algorithm would choose the 100 value for a total weight of 9000. They each have the same weight, but different values. Exhaustive would be better in this case.
+		\end{enumerate}
+	
+	
+\end{enumerate}
+
+\end{document}
